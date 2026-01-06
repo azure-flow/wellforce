@@ -1,30 +1,106 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Pure JS infinite flex "marquee" slider (no clones)
+    (function () {
+        const marqueeList = document.getElementById('marquee-list');
+        const marqueeContainer = document.getElementById('marquee-container');
+        const items = Array.from(marqueeList.children);
+        const gap = 40; // px, keep in sync with gap-[40px]
 
-    // // for scroll motion
-    // const circle = document.getElementById('scroll-circle');
-    // const line = document.getElementById('scroll-line');
+        let totalWidth = 0;
+        items.forEach((item) => {
+            totalWidth += item.offsetWidth + gap;
+        });
 
-    // const circle_position = circle.getBoundingClientRect().top;
-    // const header = document.querySelector('header');
-    // const headerHeight = header ? header.offsetHeight : 0;
+        // Remove last gap for exact width
+        totalWidth -= gap;
 
-    // const maxScroll = circle_position - headerHeight + 24;
+        let pos = 0;
+        let lastTimestamp = null;
 
-    // window.addEventListener('scroll', () => {
-    //     // const maxScroll = 600;
+        function animateMarquee(timestamp) {
+            if (!lastTimestamp) lastTimestamp = timestamp;
+            let elapsed = timestamp - lastTimestamp;
+            lastTimestamp = timestamp;
 
-    //     console.log(maxScroll);
-    //     const scrollPercent = scrollY / maxScroll;
+            // speed: px per second
+            let speed = 80;
+            pos -= speed * (elapsed / 1000);
+            if (pos <= -totalWidth) {
+                pos += totalWidth;
+            }
 
-    //     const lineHeight = line.offsetHeight;
-    //     const circleHeight = circle.offsetHeight;
+            // Move list
+            marqueeList.style.transform = `translateX(${pos}px)`;
 
-    //     const move = scrollPercent * (lineHeight - circleHeight);
+            // Move first item to the end if completely out of view
+            while (true) {
+                const firstItem = marqueeList.children[0];
+                const firstWidth = firstItem.offsetWidth + gap;
+                if (pos <= -firstWidth) {
+                    marqueeList.appendChild(firstItem);
+                    pos += firstWidth;
+                } else {
+                    break;
+                }
+            }
 
-    //     circle.style.top = `${move}px`;
-    // });
+            // Move last item to the beginning if scrolled back (for robustness)
+            while (true) {
+                const lastItem = marqueeList.children[marqueeList.children.length - 1];
+                const lastWidth = lastItem.offsetWidth + gap;
+                if (pos > 0) {
+                    marqueeList.insertBefore(lastItem, marqueeList.children[0]);
+                    pos -= lastWidth;
+                } else {
+                    break;
+                }
+            }
 
-    // Haumburger Button to open menu on smartphone
+            requestAnimationFrame(animateMarquee);
+        }
+
+        // Wait for images/fonts, then run marquee
+        window.addEventListener('load', () => {
+            requestAnimationFrame(animateMarquee);
+        });
+    })();
+
+    const initiativeSwiperEl = document.querySelector('.swiper-initiative');
+    if (initiativeSwiperEl) {
+        new Swiper('.swiper-initiative', {
+            slidesPerView: 1.1,
+            spaceBetween: 0,
+            breakpoints: {
+                900: {
+                }
+            },
+            spaceBetween: 55,
+            speed: 900,
+            loop: true,
+            centeredSlides: false,
+            // autoplay: {
+            //     delay: 3400,
+            //     disableOnInteraction: false
+            // },
+            navigation: {
+                nextEl: '.initiative-swiper-next',
+                prevEl: '.initiative-swiper-prev'
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1
+                },
+                900: {
+                    slidesPerView: 2
+                },
+                1200: {
+                    slidesPerView: 3
+                }
+            }
+        });
+    }
+
+    // ------------------------------------------------------------
 
     const hamburgerBtn = document.getElementById('hamburgerBtn');
     const menu_modal = document.getElementById('menu_modal');
@@ -53,7 +129,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-
     //
 
     function updateAboutSwiperHeight() {
@@ -75,20 +150,20 @@ document.addEventListener('DOMContentLoaded', function () {
     // Optionally: Also update on DOMContentLoaded for correct initial state
     setTimeout(() => {
         updateAboutSwiperHeight();
-    }, 500)
+    }, 500);
 
-    const about_swiper = new Swiper(".top-about-swiper", {
-        slidesPerView: "auto",
+    const about_swiper = new Swiper('.top-about-swiper', {
+        slidesPerView: 'auto',
         spaceBetween: 24,
         loop: true,
         speed: 750,
         pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
+            el: '.swiper-pagination',
+            clickable: true
         },
         navigation: {
-            nextEl: ".about-slider-next",
-            prevEl: ".about-slider-prev",
+            nextEl: '.about-slider-next',
+            prevEl: '.about-slider-prev'
         },
         loopedSlides: document.querySelectorAll('.top-about-swiper .swiper-slide').length,
         on: {
@@ -102,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (!clickedSlide) return;
 
                 if (clickedIndex === activeIndex) {
-                    swiper.slidePrev()
+                    swiper.slidePrev();
                 } else if (clickedIndex - activeIndex === 2 || clickedIndex - activeIndex === 3) {
                     swiper.slideNext();
                 }
