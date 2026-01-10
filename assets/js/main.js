@@ -1,69 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Pure JS infinite flex "marquee" slider (no clones)
-    (function () {
-        const marqueeList = document.getElementById('marquee-list');
-        const marqueeContainer = document.getElementById('marquee-container');
-        const items = Array.from(marqueeList.children);
-        const gap = 40; // px, keep in sync with gap-[40px]
 
-        let totalWidth = 0;
-        items.forEach((item) => {
-            totalWidth += item.offsetWidth + gap;
-        });
 
-        // Remove last gap for exact width
-        totalWidth -= gap;
-
-        let pos = 0;
-        let lastTimestamp = null;
-
-        function animateMarquee(timestamp) {
-            if (!lastTimestamp) lastTimestamp = timestamp;
-            let elapsed = timestamp - lastTimestamp;
-            lastTimestamp = timestamp;
-
-            // speed: px per second
-            let speed = 80;
-            pos -= speed * (elapsed / 1000);
-            if (pos <= -totalWidth) {
-                pos += totalWidth;
-            }
-
-            // Move list
-            marqueeList.style.transform = `translateX(${pos}px)`;
-
-            // Move first item to the end if completely out of view
-            while (true) {
-                const firstItem = marqueeList.children[0];
-                const firstWidth = firstItem.offsetWidth + gap;
-                if (pos <= -firstWidth) {
-                    marqueeList.appendChild(firstItem);
-                    pos += firstWidth;
-                } else {
-                    break;
-                }
-            }
-
-            // Move last item to the beginning if scrolled back (for robustness)
-            while (true) {
-                const lastItem = marqueeList.children[marqueeList.children.length - 1];
-                const lastWidth = lastItem.offsetWidth + gap;
-                if (pos > 0) {
-                    marqueeList.insertBefore(lastItem, marqueeList.children[0]);
-                    pos -= lastWidth;
-                } else {
-                    break;
-                }
-            }
-
-            requestAnimationFrame(animateMarquee);
-        }
-
-        // Wait for images/fonts, then run marquee
-        window.addEventListener('load', () => {
-            requestAnimationFrame(animateMarquee);
-        });
-    })();
+    
 
     const initiativeSwiperEl = document.querySelector('.swiper-initiative');
     if (initiativeSwiperEl) {
@@ -71,8 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
             slidesPerView: 1.1,
             spaceBetween: 0,
             breakpoints: {
-                900: {
-                }
+                900: {}
             },
             spaceBetween: 55,
             speed: 900,
@@ -95,6 +32,31 @@ document.addEventListener('DOMContentLoaded', function () {
                 },
                 1200: {
                     slidesPerView: 3
+                }
+            }
+        });
+    }
+
+    // News Swiper - Mobile slider (1 slide on mobile, 3 slides on desktop)
+    const newsSwiperEl = document.querySelector('.swiper-news');
+    if (newsSwiperEl) {
+        new Swiper('.swiper-news', {
+            slidesPerView: 1,
+            spaceBetween: 32,
+            speed: 600,
+            loop: true,
+            navigation: {
+                nextEl: '.news-swiper-next',
+                prevEl: '.news-swiper-prev'
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                    spaceBetween: 32
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 32
                 }
             }
         });
