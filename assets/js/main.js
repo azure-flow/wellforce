@@ -62,6 +62,71 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    const brandSwiperEl = document.querySelector('.swiper-brands');
+    if (brandSwiperEl) {
+        const swiperBrands = new Swiper('.swiper-brands', {
+            loop: true,
+            slidesPerView: 'auto',
+            spaceBetween: 31,
+            breakpoints: {
+                768: {
+                    spaceBetween: 40,
+                }
+            },
+            speed: 2000,
+            allowTouchMove: false,
+            autoplay: {
+                delay: 0,
+                disableOnInteraction: false
+            }
+        });
+    }
+    const swiperBrands02 = new Swiper('.swiper-brands02', {
+        loop: true,
+        slidesPerView: 'auto',
+        spaceBetween: 31,
+        speed: 2000,
+        allowTouchMove: false,
+        autoplay: {
+            delay: 0,
+            disableOnInteraction: false,
+            reverseDirection: true, // 追加: スライドの方向を逆にする
+          },
+    });
+    const swiperCompanyBrands01 = new Swiper('.swiper-company-brands01', {
+        loop: true,
+        slidesPerView: 'auto',
+        spaceBetween: 31,
+        breakpoints: {
+            1440: {
+                spaceBetween: 62,
+            }
+        },
+        speed: 2000,
+        allowTouchMove: false,
+        autoplay: {
+            delay: 0,
+            disableOnInteraction: false,
+          },
+    });
+    const swiperCompanyBrands02 = new Swiper('.swiper-company-brands02', {
+        loop: true,
+        slidesPerView: 'auto',
+        spaceBetween: 31,
+        breakpoints: {
+            1440: {
+                spaceBetween: 62,
+            }
+        },
+        speed: 2000,
+        allowTouchMove: false,
+        autoplay: {
+            delay: 0,
+            disableOnInteraction: false,
+            reverseDirection: true, // 追加: スライドの方向を逆にする
+          },
+    });
+
     // ------------------------------------------------------------
 
     const hamburgerBtn = document.getElementById('hamburgerBtn');

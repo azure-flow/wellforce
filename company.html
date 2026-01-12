@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wellforce</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
     <link rel="icon" type="image/png" href="assets/images/logo.png" />
     <link href="assets/css/swiper.css" rel="stylesheet" />
     <link href="assets/css/font.css" rel="stylesheet" />
@@ -17,123 +21,783 @@
     <script src="assets/css/tailwind.css"></script>
     <script src="assets/js/swiper-bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
-</head>
-<style>
+  </head>
+  <style>
     *,
     body {
-        font-family: 'Zen Maru Gothic', sans-serif;
+      font-family: "Zen Maru Gothic", sans-serif;
     }
-</style>
+    .swiper-company-brands01 .swiper-wrapper,
+    .swiper-company-brands02 .swiper-wrapper {
+      transition-timing-function: linear !important;
+    }
+    .swiper-company-brands01 .swiper-slide,
+    .swiper-company-brands02 .swiper-slide {
+      width: auto;
+    }
+  </style>
 
-<body class="relative">
+  <body class="relative">
     <header
-        class="block md:fixed max-w-[1400px] md:left-1/2 md:-translate-x-1/2 top-8 w-[90%] lg:w-[95%] xl:w-full top-0 z-50 bg-white rounded-[20px]">
-        <div
-            class="max-w-[1440px] w-full flex flex-row justify-between items-center px-5 md:px-24 lg:px-12 xl:px-32 py-3 md:py-5">
-            <a href="index.html" class="flex items-center gap-3 cursor-pointer select-none">
-                <div class="relative flex md:flex-col gap-3 md:gap-1 items-center justify-center">
-                    <img src="assets/images/logo.png" alt="Wellforse Logo"
-                        class="w-[70px] md:w-[80px] lg:w-[90px] xl:w-[100px] aspect-[.] object-contain" />
-                    <div class="font-gothic text-black text-[16px] font-bold">
-                        <span class="text-[#28A8E0]">Well</span>forse
-                    </div>
-                </div>
-            </a>
-            <nav class="hidden md:flex flex-col gap-3">
-                <div class="grid grid-cols-4 gap-6 lg:gap-8 xl:gap-10 justify-end">
-                    <span class="col-span-2 flex justify-end">
-                        <a href="#"
-                            class="text-black text-[13px] lg:text-[14px] xl:text-[16px] text-right font-bold hover:text-[#28A8E0] transition-colors duration-200">
-                            会社概要
-                        </a>
-                    </span>
-                    <a href="concept.html"
-                        class="text-black text-[13px] lg:text-[14px] xl:text-[16px] text-right font-bold hover:text-[#28A8E0] transition-colors duration-200">
-                        コンセプト
-                    </a>
-                    <a href="contact.html"
-                        class="text-black text-[13px] lg:text-[14px] xl:text-[16px] text-right font-bold hover:text-[#28A8E0] transition-colors duration-200">
-                        お問い合わせ
-                    </a>
-                </div>
-                <div class="grid grid-cols-4 gap-6 lg:gap-8 xl:gap-10 justify-end">
-                    <a href="service.html"
-                        class="text-black text-[13px] lg:text-[14px] xl:text-[16px] text-right font-bold hover:text-[#28A8E0] transition-colors duration-200">
-                        サービス
-                    </a>
-                    <a href="news.html"
-                        class="text-black text-[13px] lg:text-[14px] xl:text-[16px] text-right font-bold hover:text-[#28A8E0] transition-colors duration-200">
-                        ニュース
-                    </a>
-                    <a href="calendar.html"
-                        class="text-black text-[13px] lg:text-[14px] xl:text-[16px] text-right font-bold hover:text-[#28A8E0] transition-colors duration-200">
-                        カレンダー
-                    </a>
-                    <a href="announcement.html"
-                        class="text-black text-[13px] lg:text-[14px] xl:text-[16px] text-right font-bold hover:text-[#28A8E0] transition-colors duration-200">
-                        お知らせ
-                    </a>
-                </div>
-            </nav>
-            <div class="flex items-center md:hidden">
-                <div id="hamburgerBtn"
-                    class="relative flex justify-center flex-col text-white w-[37px] h-[20px] cursor-pointer">
-                    <div class="flex flex-col items-center justify-between w-full h-full">
-                        <div class="h-[1px] w-full bg-black"></div>
-                        <div class="h-[1px] w-full bg-black"></div>
-                        <div class="h-[1px] w-full bg-black"></div>
-                    </div>
-                </div>
+      class="fixed max-w-[1400px] md:left-1/2 md:-translate-x-1/2 top-0 md:top-4 lg:top-6 xl:top-8 w-full md:w-[90%] lg:w-[95%] xl:w-full top-0 z-50 bg-white transition-colors duration-200 rounded-none md:rounded-[20px]"
+    >
+      <div
+        class="max-w-[1440px] w-full flex flex-row justify-between items-center px-5 md:px-12 lg:px-20 xl:px-32 py-3 lg:py-4 xl:py-6"
+      >
+        <a
+          href="index.html"
+          class="flex items-center gap-3 cursor-pointer select-none"
+        >
+          <div
+            class="relative flex md:flex-col gap-2 md:gap-1 lg:gap-2 xl:gap-3 items-center justify-center"
+          >
+            <img
+              src="assets/images/logo.png"
+              alt="Wellforse Logo"
+              class="w-[70px] md:w-[60px] lg:w-[90px] xl:w-[100px] object-contain"
+            />
+            <div
+              class="font-gothic text-black text-[12px] md:text-[14px] lg:text-[16px] font-bold tracking-[3px]"
+            >
+              <span class="text-[#28A8E0]">Well</span>forse
             </div>
+          </div>
+        </a>
+        <nav
+          class="hidden md:flex flex-col gap-[2px] md:gap-1 lg:gap-2 xl:gap-3"
+        >
+          <div class="grid grid-cols-4 gap-6 lg:gap-8 xl:gap-10 justify-end">
+            <span class="col-span-2 flex justify-end">
+              <a
+                href="company.html"
+                class="text-black text-[13px] lg:text-[14px] xl:text-[16px] text-right font-medium hover:text-[#28A8E0] transition-colors duration-200"
+              >
+                会社概要
+              </a>
+            </span>
+            <a
+              href="concept.html"
+              class="text-black text-[13px] lg:text-[14px] xl:text-[16px] text-right font-medium hover:text-[#28A8E0] transition-colors duration-200"
+            >
+              コンセプト
+            </a>
+            <a
+              href="contact.html"
+              class="text-black text-[13px] lg:text-[14px] xl:text-[16px] text-right font-medium hover:text-[#28A8E0] transition-colors duration-200"
+            >
+              お問い合わせ
+            </a>
+          </div>
+          <div class="grid grid-cols-4 gap-6 lg:gap-8 xl:gap-10 justify-end">
+            <a
+              href="service.html"
+              class="text-black text-[13px] lg:text-[14px] xl:text-[16px] text-right font-medium hover:text-[#28A8E0] transition-colors duration-200"
+            >
+              サービス
+            </a>
+            <a
+              href="news.html"
+              class="text-black text-[13px] lg:text-[14px] xl:text-[16px] text-right font-medium hover:text-[#28A8E0] transition-colors duration-200"
+            >
+              ニュース
+            </a>
+            <a
+              href="calendar.html"
+              class="text-black text-[13px] lg:text-[14px] xl:text-[16px] text-right font-medium hover:text-[#28A8E0] transition-colors duration-200"
+            >
+              カレンダー
+            </a>
+            <a
+              href="announcement.html"
+              class="text-black text-[13px] lg:text-[14px] xl:text-[16px] text-right font-medium hover:text-[#28A8E0] transition-colors duration-200"
+            >
+              お知らせ
+            </a>
+          </div>
+        </nav>
+        <div class="flex items-center md:hidden">
+          <div
+            id="hamburgerBtn"
+            class="relative flex justify-center flex-col text-white w-[37px] h-[20px] cursor-pointer"
+          >
+            <div
+              class="flex flex-col items-center justify-between w-full h-full"
+            >
+              <div class="h-[1px] w-full bg-black"></div>
+              <div class="h-[1px] w-full bg-black"></div>
+              <div class="h-[1px] w-full bg-black"></div>
+            </div>
+          </div>
         </div>
+      </div>
     </header>
-    <section class="w-full h-[530px] bg-gradient-to-b from-[#A4D3E8] to-[#28A8E0] flex items-center justify-center">
-      <div class="mx-auto flex flex-col items-center justify-center w-full">
-        <div class="text-[14px] md:text-[16px] text-white font-normal mb-2">Company</div>
-        <h1 class="text-[24px] md:text-[32px] lg:text-[40px] text-white font-bold mb-3">会社概要</h1>
-        <div class="text-[13px] md:text-[15px] text-white text-center">株式会社ウエルフォースの会社情報をご案内します。</div>
+    <section
+      class="w-full h-[400px] md:h-[360px] lg:h-[500px] xl:h-[530px] bg-gradient-to-b from-[#A4D3E8] to-[#28A8E0] flex items-center justify-center"
+    >
+      <div
+        class="mx-auto flex flex-col items-center justify-center w-full mt-14 md:mt-16 lg:mt-28 xl:mt-32"
+      >
+        <div
+          class="text-[12px] md:text-[14px] lg:text-[16px] xl:text-[18px] text-white font-medium mb-2"
+        >
+          Company
+        </div>
+        <h2
+          class="text-[30px] md:text-[36px] lg:text-[40px] xl:text-[50px] text-white font-medium mb-3"
+        >
+          会社概要
+        </h2>
+        <div
+          class="text-[12px] md:text-[14px] lg:text-[16px] xl:text-[18px] text-white font-medium text-center"
+        >
+          株式会社ウエルフォースの会社情報をご案内します。
+        </div>
       </div>
     </section>
-    <section class="w-full max-w-[1400px] mx-auto justify-center items-center">
-        <div class="relative flex flex-col items-center justify-center">
-            <div class="relative w-[1000px] aspect-[1] bg-white rounded-[20px]">
-                <div class="bg-[red] flex justify-center items-center rotate-45 w-[400px] aspect-[1] absolute top-0 left-1/2 -translate-x-1/2 rounded-[20px]">
-                    <div class="relative -rotate-45 flex flex-col items-center">
-                        <div class="text-[14px] md:text-[16px] text-black font-normal mb-2">Company</div>
-                        <h1 class="text-[24px] md:text-[32px] lg:text-[40px] text-black font-bold mb-3">会社概要</h1>
-                        <div class="text-[13px] md:text-[15px] text-black text-center">株式会社ウエルフォースの会社情報をご案内します。</div>
-                    </div>
-                </div>
-                <div class="bg-[red] flex justify-center items-center rotate-45 w-[400px] aspect-[1] absolute right-0 top-1/2 -translate-y-1/2 rounded-[20px]">
-                    <div class="relative -rotate-45 flex flex-col items-center">
-                        <div class="text-[14px] md:text-[16px] text-black font-normal mb-2">Company</div>
-                        <h1 class="text-[24px] md:text-[32px] lg:text-[40px] text-black font-bold mb-3">会社概要</h1>
-                        <div class="text-[13px] md:text-[15px] text-black text-center">株式会社ウエルフォースの会社情報をご案内します。</div>
-                    </div>
-                </div>
-                <div class="bg-[red] flex justify-center items-center rotate-45 w-[400px] aspect-[1] absolute bottom-0 left-1/2 -translate-x-1/2 rounded-[20px]">
-                    <div class="relative -rotate-45 flex flex-col items-center">
-                        <div class="text-[14px] md:text-[16px] text-black font-normal mb-2">Company</div>
-                        <h1 class="text-[24px] md:text-[32px] lg:text-[40px] text-black font-bold mb-3">会社概要</h1>
-                        <div class="text-[13px] md:text-[15px] text-black text-center">株式会社ウエルフォースの会社情報をご案内します。</div>
-                    </div>
-                </div>
-                <div class="bg-[red] flex justify-center items-center rotate-45 w-[400px] aspect-[1] absolute left-0 bottom-1/2 translate-y-1/2 rounded-[20px]">
-                    <div class="relative -rotate-45 flex flex-col items-center">
-                        <div class="text-[14px] md:text-[16px] text-black font-normal mb-2">Company</div>
-                        <h1 class="text-[24px] md:text-[32px] lg:text-[40px] text-black font-bold mb-3">会社概要</h1>
-                        <div class="text-[13px] md:text-[15px] text-black text-center">株式会社ウエルフォースの会社情報をご案内します。</div>
-                    </div>
-                </div>
-                <div class="flex flex-col justify-center items-center w-[200px] h-[200px] bg-white rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                    <div class="text-[14px] md:text-[16px] text-black font-normal mb-2">Company</div>
-                    <h1 class="text-[24px] md:text-[32px] lg:text-[40px] text-black font-bold mb-3">会社概要</h1>
-                    <div class="text-[13px] md:text-[15px] text-black text-center">株式会社ウエルフォースの会社情報をご案内します。</div>
-                </div>
-
-            </div>
-        </div>
+    <section
+      class="w-full max-w-[1200px] mx-auto justify-center items-center px-4 md:px-8 lg:px-12 xl:px-16"
+    >
+      <div
+        class="text-[10px] md:text-[11px] lg:text-[13px] xl:text-[14px] text-black py-4 md:py-5 lg:py-7 xl:py-8"
+      >
+        株式会社ウエルフォース / 会社概要
+      </div>
     </section>
-</body>
+    <section
+      class="w-full flex justify-center items-center mt-10 md:mt-10 lg:mt-12 xl:mt-[70px] mb-[70px] md:mb-[100px] lg:mb-[120px] xl:mb-[150px]"
+    >
+      <div
+        class="w-full max-w-[750px] bg-white shadow-none px-[38px] md:px-[48px] lg:px-[60px] xl:px-0"
+      >
+        <div class="text-black">
+          <div
+            class="flex flex-col md:flex-row gap-1 md:gap-0 border-b border-y-[.5px] py-3 md:py-5 lg:py-6 xl:py-8 px-[27px] md:pl-[44px] lg:pl-[56px] xl:pl-[72px] border-black text-[14px] md:text-[15px] lg:text-[16px] xl:text-[18px]"
+          >
+            <div class="md:w-[126px] lg:w-[148px] xl:w-[170px]">社名</div>
+            <div class="">株式会社ウエルフォース</div>
+          </div>
+          <div
+            class="flex flex-col md:flex-row gap-1 md:gap-0 border-b border-b-[.5px] py-3 md:py-5 lg:py-6 xl:py-8 px-[27px] md:pl-[44px] lg:pl-[56px] xl:pl-[72px] border-black text-[14px] md:text-[15px] lg:text-[16px] xl:text-[18px]"
+          >
+            <div class="md:w-[126px] lg:w-[148px] xl:w-[170px]">住所</div>
+            <div class="">〒577-0000 大阪府東大阪市中小阪2丁目</div>
+          </div>
+          <div
+            class="flex flex-col md:flex-row gap-1 md:gap-0 border-b border-b-[.5px] py-3 md:py-5 lg:py-6 xl:py-8 px-[27px] md:pl-[44px] lg:pl-[56px] xl:pl-[72px] border-black text-[14px] md:text-[15px] lg:text-[16px] xl:text-[18px]"
+          >
+            <div class="md:w-[126px] lg:w-[148px] xl:w-[170px]">事業目的</div>
+            <div class="">快適な暮らし、確かな信頼。あなたの新しいホーム。</div>
+          </div>
+          <div
+            class="flex flex-col md:flex-row gap-1 md:gap-0 border-b border-b-[.5px] py-3 md:py-5 lg:py-6 xl:py-8 px-[27px] md:pl-[44px] lg:pl-[56px] xl:pl-[72px] border-black text-[14px] md:text-[15px] lg:text-[16px] xl:text-[18px]"
+          >
+            <div class="md:w-[126px] lg:w-[148px] xl:w-[170px]">資本金</div>
+            <div class="">300万円</div>
+          </div>
+          <div
+            class="flex flex-col md:flex-row gap-1 md:gap-0 border-b border-b-[.5px] py-3 md:py-5 lg:py-6 xl:py-8 px-[27px] md:pl-[44px] lg:pl-[56px] xl:pl-[72px] border-black text-[14px] md:text-[15px] lg:text-[16px] xl:text-[18px]"
+          >
+            <div class="md:w-[126px] lg:w-[148px] xl:w-[170px]">設立日</div>
+            <div class="">2007年5月1日</div>
+          </div>
+          <div
+            class="flex flex-col md:flex-row gap-1 md:gap-0 border-b border-b-[.5px] py-3 md:py-5 lg:py-6 xl:py-8 px-[27px] md:pl-[44px] lg:pl-[56px] xl:pl-[72px] border-black text-[14px] md:text-[15px] lg:text-[16px] xl:text-[18px]"
+          >
+            <div class="md:w-[126px] lg:w-[148px] xl:w-[170px]">
+              ホームページ
+            </div>
+            <div class="">
+              <a href="http://www.wellforse.jp/" target="_blank"
+                >https://www.wellforce.jp/</a
+              >
+            </div>
+          </div>
+          <div
+            class="flex flex-col md:flex-row gap-1 md:gap-0 border-b border-b-[.5px] py-3 md:py-5 lg:py-6 xl:py-8 px-[27px] md:pl-[44px] lg:pl-[56px] xl:pl-[72px] border-black text-[14px] md:text-[15px] lg:text-[16px] xl:text-[18px]"
+          >
+            <div class="md:w-[126px] lg:w-[148px] xl:w-[170px]">メール</div>
+            <div class="">info@wellforce.jp</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      class="w-full flex flex-col justify-center items-center bg-[#f7fdff] py-20 md:py-24 lg:py-28 lg:py-32"
+    >
+      <div
+        class="w-full max-w-[1200px] mx-auto justify-center items-center px-4 md:px-8 lg:px-12 xl:px-16 mb-[72px] md:mb-20 lg:mb-24 lg:mb-28"
+      >
+        <h2
+          class="text-[20px] md:text-[27px] lg:text-[32px] xl:text-[40px] font-bold md:font-medium text-center w-full leading-tight"
+        >
+          事業内容
+        </h2>
+      </div>
+      <div
+        class="w-full max-w-[1200px] mx-auto px-9 md:px-8 lg:px-12 xl:px-16 justify-center items-center flex flex-col gap-6 md:gap-6 lg:gap-8 xl:gap-10"
+      >
+        <div
+          class="w-full max-w-[1160px] flex flex-col-reverse md:flex-row items-center md:items-center gap-12 md:gap-6 lg:gap-8 xl:gap-10"
+        >
+          <!-- Text block -->
+          <div
+            class="w-full flex flex-col items-start justify-center gap-4 lg:gap-[20px] xl:gap-[30px] mb-6 md:mb-0"
+          >
+            <h3
+              class="text-[16px] md:text-[18px] lg:text-[20px] xl:text-[24px] font-semibold text-black mb-5 md:mb-2 lg:mb-3 xl:mb-4"
+            >
+              賃貸住宅の経営・運営
+            </h3>
+            <p
+              class="text-[14px] md:text-[12px] lg:text-[15px] xl:text-[16px] text-black leading-[1.8] md:leading-relaxed font-medium"
+            >
+              ― 高品質な住まいを通じた、<br
+                class="block md:hidden"
+              />安心と快適の提供 ―
+            </p>
+            <p
+              class="text-[14px] md:text-[12px] lg:text-[15px] xl:text-[16px] text-black leading-[1.8] md:leading-relaxed"
+            >
+              株式会社ウエルフォースは、東大阪市・八戸ノ里地域において、<br />
+              積水ハウス様・パナソニックホームズ様が手がける高性能賃貸住宅の経営・運営を行っています。
+            </p>
+            <p
+              class="text-[14px] md:text-[12px] lg:text-[15px] xl:text-[16px] text-black leading-[1.8] md:leading-relaxed"
+            >
+              軽量鉄骨造2階建てアパートを中心に、<br />
+              耐震性・断熱性・遮音性といった住宅性能はもちろん、<br />
+              長期的に安心して暮らせる住環境づくりを重視してきました。
+            </p>
+            <p
+              class="text-[14px] md:text-[12px] lg:text-[15px] xl:text-[16px] text-black leading-[1.8] md:leading-relaxed"
+            >
+              33年以上にわたる賃貸経営の実績を活かし、<br />
+              単に「住む場所」を提供するのではなく、<br />
+              地域に根ざし、入居者の暮らしに寄り添うプロパティマネジメントを行っています。
+            </p>
+          </div>
+          <!-- Image block -->
+          <div class="w-full flex justify-center md:justify-end">
+            <div
+              class="bg-white rounded-[20px] shadow-sm overflow-hidden w-[300px] md:w-[350px] lg:w-[500px] xl:w-[620px] w-full"
+            >
+              <img
+                src="assets/images/bis01.webp"
+                alt="賃貸住宅の外観と入居者イメージ"
+                class="w-full h-auto"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="w-full max-w-[1160px] mx-auto justify-center items-center pb-[40px] lg:pb-[45px] xl:pb-[50px]"
+        >
+          <p
+            class="text-[14px] lg:text-[15px] xl:text-[16px] font-medium text-start md:text-center leading-6"
+          >
+            今後はホームページを通じて、物件情報だけでなく、地域の魅力や暮らしの価値も発信し、「選ばれ続ける賃貸住宅」を目指します。
+          </p>
+        </div>
+        <div
+          class="w-full max-w-[1160px] flex flex-col md:flex-row items-center md:items-center gap-12 md:gap-6 lg:gap-8 xl:gap-10"
+        >
+          <!-- Image block -->
+          <div class="w-full flex justify-center md:justify-end">
+            <div
+              class="bg-white rounded-[20px] shadow-sm overflow-hidden w-[300px] md:w-[350px] lg:w-[500px] xl:w-[620px] w-full"
+            >
+              <img
+                src="assets/images/bis02.webp"
+                alt="賃貸住宅の外観と入居者イメージ"
+                class="w-full h-auto"
+              />
+            </div>
+          </div>
+          <!-- Text block -->
+          <div
+            class="w-full flex flex-col items-start justify-center gap-4 lg:gap-[20px] xl:gap-[30px] mb-6 md:mb-0"
+          >
+            <h3
+              class="text-[16px] md:text-[18px] lg:text-[20px] xl:text-[24px] font-semibold text-black mb-5 md:mb-2 lg:mb-3 xl:mb-4"
+            >
+              生成AIコミュニティの運営
+            </h3>
+            <p
+              class="text-[14px] md:text-[12px] lg:text-[15px] xl:text-[16px] text-black leading-[1.8] md:leading-relaxed font-medium"
+            >
+              ― 生成AIデジタル・コミュニティによる、<br
+                class="block md:hidden"
+              />新しいつながりの創出 ―
+            </p>
+            <p
+              class="text-[14px] md:text-[12px] lg:text-[15px] xl:text-[16px] text-black leading-[1.8] md:leading-relaxed"
+            >
+              ウエルフォースは、住まいを軸にした次のステップとして、
+              地域コミュニティの活性化に取り組んでいます。
+            </p>
+            <p
+              class="text-[14px] md:text-[12px] lg:text-[15px] xl:text-[16px] text-black leading-[1.8] md:leading-relaxed"
+            >
+              その中心となるのが、<br />
+              「生成AIデジタル・コミュニティ」の開発・運営です。
+            </p>
+            <p
+              class="text-[14px] md:text-[12px] lg:text-[15px] xl:text-[16px] text-black leading-[1.8] md:leading-relaxed"
+            >
+              生成AIを「難しい技術」ではなく、<br />
+              誰もが楽しみながら触れ、学び、つながれるツールとして捉え、<br />
+              デジタルリテラシー向上を目的とした交流の場を提供します。
+            </p>
+            <p
+              class="text-[14px] md:text-[12px] lg:text-[15px] xl:text-[16px] text-black leading-[1.8] md:leading-relaxed"
+            >
+              ・生成AIで遊ぶ、試す、学ぶ<br />
+              ・世代や職業を超えた交流<br />
+              ・地域の中に新しい価値と会話を生み出す
+            </p>
+          </div>
+        </div>
+        <div
+          class="w-full max-w-[1160px] mx-auto justify-center items-center pb-[40px] lg:pb-[45px] xl:pb-[50px]"
+        >
+          <p
+            class="text-[14px] lg:text-[15px] xl:text-[16px] font-medium text-start md:text-center leading-6"
+          >
+            こうした取り組みを通じて、人と人とのつながりを強め、地域全体のウェルビーイング向上を目指します。
+          </p>
+        </div>
+        <div
+          class="w-full max-w-[1160px] flex flex-col-reverse md:flex-row items-center md:items-center gap-12 md:gap-6 lg:gap-8 xl:gap-10"
+        >
+          <!-- Text block -->
+          <div
+            class="w-full flex flex-col items-start justify-center gap-4 lg:gap-[20px] xl:gap-[30px] mb-6 md:mb-0"
+          >
+            <h3
+              class="text-[16px] md:text-[18px] lg:text-[20px] xl:text-[24px] font-semibold text-black mb-5 md:mb-2 lg:mb-3 xl:mb-4"
+            >
+              未来型賃貸住宅の開発・運営
+            </h3>
+            <p
+              class="text-[14px] md:text-[12px] lg:text-[15px] xl:text-[16px] text-black leading-[1.8] md:leading-relaxed font-medium"
+            >
+              ― 猫と人が共に幸せに暮らす、<br
+                class="block md:hidden"
+              />新しい住まいのかたち ―
+            </p>
+            <p
+              class="text-[14px] md:text-[12px] lg:text-[15px] xl:text-[16px] text-black leading-[1.8] md:leading-relaxed"
+            >
+              ウエルフォースが描く未来の住まいは、
+              人だけでなく、大切な存在である「猫」との共生を前提とした賃貸住宅です。
+            </p>
+            <p
+              class="text-[14px] md:text-[12px] lg:text-[15px] xl:text-[16px] text-black leading-[1.8] md:leading-relaxed"
+            >
+              「猫と暮らす賃貸住宅（猫専用アパート）」の建築・運営を通じて、
+              <br />
+              猫の習性や安全性に配慮した設計、<br />
+              入居者同士が価値観を共有できるコミュニティ形成を行います。
+            </p>
+            <p
+              class="text-[14px] md:text-[12px] lg:text-[15px] xl:text-[16px] text-black leading-[1.8] md:leading-relaxed"
+            >
+              ・猫にも人にもストレスの少ない住環境<br />
+              ・ペット可ではなく「共生」を前提とした設計思想<br />
+              ・住む人同士がつながる、温かなコミュニティ
+            </p>
+          </div>
+          <!-- Image block -->
+          <div class="w-full flex justify-center md:justify-end">
+            <div
+              class="bg-white rounded-[20px] shadow-sm overflow-hidden w-[300px] md:w-[350px] lg:w-[500px] xl:w-[620px] w-full"
+            >
+              <img
+                src="assets/images/bis03.webp"
+                alt="賃貸住宅の外観と入居者イメージ"
+                class="w-full h-auto"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="w-full max-w-[1160px] mx-auto justify-center items-center"
+        >
+          <p
+            class="text-[14px] lg:text-[15px] xl:text-[16px] font-medium text-start md:text-center leading-6"
+          >
+            住まいを起点に、人・動物・地域が調和する未来型賃貸住宅を実現し、地域に新しいライフスタイルと価値を提供していきます。
+          </p>
+        </div>
+      </div>
+    </section>
 
+    <section
+      class="w-full flex flex-col justify-center items-center bg-white py-20 md:py-24 lg:py-28 lg:py-32"
+    >
+      <div
+        class="w-full max-w-[1200px] mx-auto justify-center items-center px-4 md:px-8 lg:px-12 xl:px-16 mb-[72px] md:mb-20 lg:mb-24 lg:mb-28"
+      >
+        <h2
+          class="text-[20px] md:text-[27px] lg:text-[32px] xl:text-[40px] font-bold md:font-medium text-center w-full leading-tight"
+        >
+          取引会社
+        </h2>
+      </div>
+      <div
+        class="md:max-w-[662px] lg:max-w-[842px] xl:max-w-[1024px] w-full flex flex-col items-center justify-center mx-auto"
+      >
+        <div class="swiper swiper-company-brands01 w-full">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div
+                class="w-[208px] md:w-[200px] lg:w-[260px] xl:w-full max-w-[300px] aspect-[2] bg-white rounded-[20px] rounded-[15px] border-[1px] border-gray-300 flex items-center justify-center overflow-hidden"
+              >
+                <img
+                  src="assets/images/brand01.webp"
+                  alt="marquee01"
+                  class="w-full object-cover"
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div
+                class="w-[208px] md:w-[200px] lg:w-[260px] xl:w-full max-w-[300px] aspect-[2] bg-white rounded-[20px] rounded-[15px] border-[1px] border-gray-300 flex items-center justify-center overflow-hidden"
+              >
+                <img
+                  src="assets/images/brand02.webp"
+                  alt="marquee02"
+                  class="w-full object-cover"
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div
+                class="w-[208px] md:w-[200px] lg:w-[260px] xl:w-full max-w-[300px] aspect-[2] bg-white rounded-[20px] rounded-[15px] border-[1px] border-gray-300 flex items-center justify-center overflow-hidden"
+              >
+                <img
+                  src="assets/images/brand03.webp"
+                  alt="marquee03"
+                  class="w-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper swiper-company-brands02 w-full mt-[32px]">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div
+                class="w-[208px] md:w-[200px] lg:w-[260px] xl:w-full max-w-[300px] aspect-[2] bg-white rounded-[20px] rounded-[15px] border-[1px] border-gray-300 flex items-center justify-center overflow-hidden"
+              >
+                <img
+                  src="assets/images/brand04.webp"
+                  alt="marquee04"
+                  class="w-full object-cover"
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div
+                class="w-[208px] md:w-[200px] lg:w-[260px] xl:w-full max-w-[300px] aspect-[2] bg-white rounded-[20px] rounded-[15px] border-[1px] border-gray-300 flex items-center justify-center overflow-hidden"
+              >
+                <img
+                  src="assets/images/brand05.webp"
+                  alt="marquee05"
+                  class="w-full object-cover"
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div
+                class="w-[208px] md:w-[200px] lg:w-[260px] xl:w-full max-w-[300px] aspect-[2] bg-white rounded-[20px] rounded-[15px] border-[1px] border-gray-300 flex items-center justify-center overflow-hidden"
+              >
+                <img
+                  src="assets/images/brand06.webp"
+                  alt="marquee06"
+                  class="w-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-[#42a7e8] text-white">
+      <div class="mx-auto px-16 md:px-0" style="max-width: 1100px">
+        <div class="flex flex-wrap md:flex-nowrap gap-x-12 pt-16 pb-12">
+          <div
+            class="w-full md:w-1/6 flex flex-col items-center md:items-start mb-8 md:mb-0"
+          >
+            <img
+              src="assets/images/logo.png"
+              alt="Wellforce logo"
+              class="mb-3 w-[100px]"
+              style="filter: brightness(0) invert(1)"
+            />
+            <span class="text-white font-medium text-[30px] mb-5"
+              >Wellforce</span
+            >
+          </div>
+          <div class="w-full md:w-1/4 flex flex-col items-start mb-8 md:mb-0">
+            <span class="font-bold mb-8 text-[16px] md:text-[18px]"
+              >メニュー</span
+            >
+            <div class="grid grid-cols-2 gap-20 md:gap-8">
+              <ul class="text-sm leading-8">
+                <li>
+                  <a
+                    href="company.html"
+                    class="hover:underline text-[12px] md:text-[14px] lg:text-[16px] font-300"
+                    >会社概要</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="concept.html"
+                    class="hover:underline text-[12px] md:text-[14px] lg:text-[16px] font-300"
+                    >コンセプト</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="contact.html"
+                    class="hover:underline text-[12px] md:text-[14px] lg:text-[16px] font-300"
+                    >お問い合わせ</a
+                  >
+                </li>
+              </ul>
+              <ul class="text-sm leading-8">
+                <li>
+                  <a
+                    href="news.html"
+                    class="hover:underline text-[12px] md:text-[14px] lg:text-[16px] font-300"
+                    >サービス</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="hover:underline text-[12px] md:text-[14px] lg:text-[16px] font-300"
+                    >ニュース</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="calendar.html"
+                    class="hover:underline text-[12px] md:text-[14px] lg:text-[16px] font-300"
+                    >カレンダ</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="announcement.html"
+                    class="hover:underline text-[12px] md:text-[14px] lg:text-[16px] font-300"
+                    >お知らせ</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="w-full md:w-1/4 mb-12 md:mb-0">
+            <span class="font-bold mb-8 text-[16px] md:text-[18px] block"
+              >会社情報</span
+            >
+            <ul class="text-sm leading-8">
+              <li>
+                <a
+                  href="#"
+                  class="hover:underline text-[12px] md:text-[14px] lg:text-[16px] font-300"
+                  >名称 ：株式会社ウエルフォース</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:underline text-[12px] md:text-[14px] lg:text-[16px] font-300"
+                  >住所 ：東大阪市中小阪2丁目</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:underline text-[12px] md:text-[14px] lg:text-[16px] font-300"
+                  >メール：info@wellforce.jp</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="w-full md:w-1/4 md:mb-0">
+            <span class="font-bold mb-8 text-[16px] md:text-[18px] block"
+              >取引会社</span
+            >
+            <ul class="text-sm leading-8">
+              <li>
+                <a
+                  href="#"
+                  class="hover:underline text-[12px] md:text-[14px] lg:text-[16px] font-300"
+                  >積水ハウス</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:underline text-[12px] md:text-[14px] lg:text-[16px] font-300"
+                  >積水ハウスシャーメゾン関西</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:underline text-[12px] md:text-[14px] lg:text-[16px] font-300"
+                  >積水ハウス建設グループ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:underline text-[12px] md:text-[14px] lg:text-[16px] font-300"
+                  >パナソニックホームズ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:underline text-[12px] md:text-[14px] lg:text-[16px] font-300"
+                  >パナソニックホームズ不動産</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:underline text-[12px] md:text-[14px] lg:text-[16px] font-300"
+                  >パナソニックリフォーム</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="border-t-[0.5px] border-white/[0.4]">
+        <div
+          class="mx-auto text-center py-5 md:py-6 lg:py-7 xl:py-8 text-[12px] md:text-[14px] xl:text-[16px] max-w-[1100px]"
+        >
+          © <span id="copyright-year"></span> 株式会社ウエルフォース All Rights
+          Reserved.
+          <script>
+            document.getElementById("copyright-year").textContent =
+              new Date().getFullYear();
+          </script>
+        </div>
+      </div>
+    </footer>
+    <div
+      id="menu_modal"
+      class="w-full fixed inset-0 z-40 flex bg-[#28A8E0] transition-all duration-700 ease-in-out pointer-events-none opacity-0 pt-[77px]"
+    >
+      <div
+        class="relative w-full h-full flex flex-col px-16 py-16 bg-[#28A8E0] overflow-auto"
+      >
+        <div
+          class="w-full md:w-1/6 flex flex-col items-center md:items-start mb-12 md:mb-0"
+        >
+          <img
+            src="assets/images/logo.png"
+            alt="Wellforce logo"
+            class="mb-3 w-[90px]"
+            style="filter: brightness(0) invert(1)"
+          />
+          <span class="text-white font-medium text-[24px] mb-5">Wellforce</span>
+        </div>
+        <nav class="flex flex-col gap-[2px]">
+          <div class="grid grid-cols-2 gap-y-10 gap-x-20 justify-start">
+            <a
+              href="company.html"
+              class="text-white text-[13px] text-start font-medium"
+            >
+              会社概要
+            </a>
+            <a
+              href="concept.html"
+              class="text-white text-[13px] text-start font-medium"
+            >
+              コンセプト
+            </a>
+            <a
+              href="contact.html"
+              class="text-white text-[13px] text-start font-medium"
+            >
+              お問い合わせ
+            </a>
+            <a
+              href="service.html"
+              class="text-white text-[13px] text-start font-medium"
+            >
+              サービス
+            </a>
+            <a
+              href="news.html"
+              class="text-white text-[13px] text-start font-medium"
+            >
+              ニュース
+            </a>
+            <a
+              href="calendar.html"
+              class="text-white text-[13px] text-start font-medium"
+            >
+              カレンダー
+            </a>
+            <a
+              href="announcement.html"
+              class="text-white text-[13px] text-start font-medium"
+            >
+              お知らせ
+            </a>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <!-- <section class="w-full max-w-[1400px] mx-auto justify-center items-center">
+				<div class="relative flex flex-col items-center justify-center">
+						<div class="relative w-[1000px] aspect-[1] bg-white rounded-[20px]">
+								<div class="bg-[red] flex justify-center items-center rotate-45 w-[400px] aspect-[1] absolute top-0 left-1/2 -translate-x-1/2 rounded-[20px]">
+										<div class="relative -rotate-45 flex flex-col items-center">
+												<div class="text-[14px] md:text-[16px] text-black font-normal mb-2">Company</div>
+												<h1 class="text-[24px] md:text-[32px] lg:text-[40px] text-black font-bold mb-3">会社概要</h1>
+												<div class="text-[13px] md:text-[15px] text-black text-center">株式会社ウエルフォースの会社情報をご案内します。</div>
+										</div>
+								</div>
+								<div class="bg-[red] flex justify-center items-center rotate-45 w-[400px] aspect-[1] absolute right-0 top-1/2 -translate-y-1/2 rounded-[20px]">
+										<div class="relative -rotate-45 flex flex-col items-center">
+												<div class="text-[14px] md:text-[16px] text-black font-normal mb-2">Company</div>
+												<h1 class="text-[24px] md:text-[32px] lg:text-[40px] text-black font-bold mb-3">会社概要</h1>
+												<div class="text-[13px] md:text-[15px] text-black text-center">株式会社ウエルフォースの会社情報をご案内します。</div>
+										</div>
+								</div>
+								<div class="bg-[red] flex justify-center items-center rotate-45 w-[400px] aspect-[1] absolute bottom-0 left-1/2 -translate-x-1/2 rounded-[20px]">
+										<div class="relative -rotate-45 flex flex-col items-center">
+												<div class="text-[14px] md:text-[16px] text-black font-normal mb-2">Company</div>
+												<h1 class="text-[24px] md:text-[32px] lg:text-[40px] text-black font-bold mb-3">会社概要</h1>
+												<div class="text-[13px] md:text-[15px] text-black text-center">株式会社ウエルフォースの会社情報をご案内します。</div>
+										</div>
+								</div>
+								<div class="bg-[red] flex justify-center items-center rotate-45 w-[400px] aspect-[1] absolute left-0 bottom-1/2 translate-y-1/2 rounded-[20px]">
+										<div class="relative -rotate-45 flex flex-col items-center">
+												<div class="text-[14px] md:text-[16px] text-black font-normal mb-2">Company</div>
+												<h1 class="text-[24px] md:text-[32px] lg:text-[40px] text-black font-bold mb-3">会社概要</h1>
+												<div class="text-[13px] md:text-[15px] text-black text-center">株式会社ウエルフォースの会社情報をご案内します。</div>
+										</div>
+								</div>
+								<div class="flex flex-col justify-center items-center w-[200px] h-[200px] bg-white rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+										<div class="text-[14px] md:text-[16px] text-black font-normal mb-2">Company</div>
+										<h1 class="text-[24px] md:text-[32px] lg:text-[40px] text-black font-bold mb-3">会社概要</h1>
+										<div class="text-[13px] md:text-[15px] text-black text-center">株式会社ウエルフォースの会社情報をご案内します。</div>
+								</div>
+
+						</div>
+				</div>
+		</section> -->
+  </body>
 </html>
