@@ -13,6 +13,35 @@
     box-sizing: border-box;
 }
 
+/* Ensure scrollbars are visible on all pages */
+html {
+    overflow-y: scroll;
+    scrollbar-width: auto;
+    -ms-overflow-style: scrollbar;
+}
+
+html::-webkit-scrollbar {
+    display: block;
+    width: 8px;
+}
+
+html::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
+
+body {
+    overflow-y: auto;
+}
+
 /* 
 * {
     font-family: "Zen Old Mincho", serif;

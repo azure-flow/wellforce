@@ -7,11 +7,16 @@ document.addEventListener('DOMContentLoaded', function () {
     if (initiativeSwiperEl) {
         new Swiper('.swiper-initiative', {
             slidesPerView: 1.1,
-            spaceBetween: 0,
             breakpoints: {
-                900: {}
+                0: {
+                    slidesPerView: 1,
+                    spaceBetween: 32
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 24
+                }
             },
-            spaceBetween: 55,
             speed: 900,
             loop: true,
             centeredSlides: false,
@@ -23,17 +28,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 nextEl: '.initiative-swiper-next',
                 prevEl: '.initiative-swiper-prev'
             },
-            breakpoints: {
-                0: {
-                    slidesPerView: 1
-                },
-                900: {
-                    slidesPerView: 2
-                },
-                1200: {
-                    slidesPerView: 3
-                }
-            }
         });
     }
 
@@ -56,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 },
                 1024: {
                     slidesPerView: 3,
-                    spaceBetween: 32
+                    spaceBetween: 24
                 }
             }
         });
