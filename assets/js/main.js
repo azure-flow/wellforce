@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     spaceBetween: 40,
                 }
             },
-            speed: 2000,
+            speed: 8000,
             allowTouchMove: false,
             autoplay: {
                 delay: 0,
