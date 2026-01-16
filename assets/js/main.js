@@ -1,6 +1,35 @@
 document.addEventListener('DOMContentLoaded', function () {
 
 
+    // Scroll to Top Button
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    if (scrollToTopBtn) {
+        // Show/hide button based on scroll position
+        function toggleScrollToTopButton() {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                scrollToTopBtn.classList.add('opacity-100', 'pointer-events-auto');
+            } else {
+                scrollToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                scrollToTopBtn.classList.remove('opacity-100', 'pointer-events-auto');
+            }
+        }
+
+        // Scroll to top function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Event listeners
+        window.addEventListener('scroll', toggleScrollToTopButton);
+        scrollToTopBtn.addEventListener('click', scrollToTop);
+
+        // Initial check
+        toggleScrollToTopButton();
+    }
     
 
     const initiativeSwiperEl = document.querySelector('.swiper-initiative');
@@ -149,62 +178,4 @@ document.addEventListener('DOMContentLoaded', function () {
             toggleModal();
         }
     });
-
-    //
-
-    function updateAboutSwiperHeight() {
-        const nextSlide = document.querySelector('.top-about-swiper .swiper-slide-next img');
-        const container = document.querySelector('.top-about-swiper .swiper-wrapper');
-        if (nextSlide && container) {
-            const h = nextSlide.offsetHeight;
-            container.style.height = h + 'px';
-        }
-    }
-
-    // Debounce to ensure function runs AFTER window resizing is completed
-    window.addEventListener('resize', () => {
-        setTimeout(() => {
-            updateAboutSwiperHeight();
-        }, 500);
-    });
-
-    // Optionally: Also update on DOMContentLoaded for correct initial state
-    setTimeout(() => {
-        updateAboutSwiperHeight();
-    }, 500);
-
-    const about_swiper = new Swiper('.top-about-swiper', {
-        slidesPerView: 'auto',
-        spaceBetween: 24,
-        loop: true,
-        speed: 750,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true
-        },
-        navigation: {
-            nextEl: '.about-slider-next',
-            prevEl: '.about-slider-prev'
-        },
-        loopedSlides: document.querySelectorAll('.top-about-swiper .swiper-slide').length,
-        on: {
-            beforeInit: function (swiper) {
-                swiper.params.loopAdditionalSlides = 2;
-            },
-            click: function (swiper, event) {
-                const clickedSlide = swiper.clickedSlide;
-                const activeIndex = swiper.activeIndex;
-                const clickedIndex = swiper.slides.indexOf(clickedSlide);
-                if (!clickedSlide) return;
-
-                if (clickedIndex === activeIndex) {
-                    swiper.slidePrev();
-                } else if (clickedIndex - activeIndex === 2 || clickedIndex - activeIndex === 3) {
-                    swiper.slideNext();
-                }
-            }
-        }
-    });
-
-    about_swiper.slidePrev();
 });
