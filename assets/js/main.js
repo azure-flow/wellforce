@@ -296,6 +296,31 @@ document.addEventListener("DOMContentLoaded", function () {
       videoContainer.style.pointerEvents = "auto";
     }
 
+    // Handle outside click for mobile
+    let outsideClickHandler = null;
+
+    // Function to add outside click listener
+    function addOutsideClickListener() {
+      if (isMobile && !outsideClickHandler) {
+        outsideClickHandler = (e) => {
+          if (!container.contains(e.target) && isVideoPlaying) {
+            hideVideo();
+          }
+        };
+        setTimeout(() => {
+          document.addEventListener("click", outsideClickHandler);
+        }, 100);
+      }
+    }
+
+    // Function to remove outside click listener
+    function removeOutsideClickListener() {
+      if (outsideClickHandler) {
+        document.removeEventListener("click", outsideClickHandler);
+        outsideClickHandler = null;
+      }
+    }
+
     // Function to hide video and show image with fade
     function hideVideo() {
       video.pause();
@@ -305,6 +330,10 @@ document.addEventListener("DOMContentLoaded", function () {
       videoContainer.style.opacity = "0";
       videoContainer.style.pointerEvents = "none";
       image.style.opacity = "1";
+      // Remove outside click listener on mobile
+      if (isMobile) {
+        removeOutsideClickListener();
+      }
     }
 
     // Desktop: Hover to show video
@@ -334,18 +363,35 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Mobile: Click play button on image to show and play video
-    mobilePlayBtn?.addEventListener("click", (e) => {
-      e.stopPropagation();
-      showVideo();
-      video.play();
-      isVideoPlaying = true;
-      videoPlayBtn.style.opacity = "0";
-    });
-
-    // Mobile: Click on video area to stop and hide
     if (isMobile) {
-      video.addEventListener("click", (e) => {
-        if (e.target === video && isVideoPlaying) {
+      mobilePlayBtn?.addEventListener("click", (e) => {
+        e.stopPropagation();
+        showVideo();
+        video.play();
+        isVideoPlaying = true;
+        videoPlayBtn.style.opacity = "0";
+        addOutsideClickListener();
+      });
+
+      // Mobile: Click on video play button to play
+      videoPlayBtn?.addEventListener("click", (e) => {
+        e.stopPropagation();
+        if (!isVideoPlaying) {
+          video.play();
+          isVideoPlaying = true;
+          videoPlayBtn.style.opacity = "0";
+          addOutsideClickListener();
+        }
+      });
+
+      // Mobile: Click anywhere on video container (except play button) to stop
+      videoContainer.addEventListener("click", (e) => {
+        // Don't stop if clicking the play button
+        if (e.target === videoPlayBtn || videoPlayBtn?.contains(e.target)) {
+          return;
+        }
+        // Stop video if it's playing
+        if (isVideoPlaying) {
           hideVideo();
         }
       });
