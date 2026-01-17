@@ -1,4 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
+
+  // AOS
+  if (typeof(AOS) !== "undefined") {
+    AOS.init();
+  }
+
   // Scroll to Top Button
   const scrollToTopBtn = document.getElementById("scrollToTopBtn");
   if (scrollToTopBtn) {
@@ -130,10 +136,10 @@ document.addEventListener("DOMContentLoaded", function () {
       speed: 900,
       loop: true,
       centeredSlides: false,
-      // autoplay: {
-      //     delay: 3400,
-      //     disableOnInteraction: false
-      // },
+      autoplay: {
+          delay: 3400,
+          disableOnInteraction: false
+      },
       navigation: {
         nextEl: ".initiative-swiper-next",
         prevEl: ".initiative-swiper-prev",

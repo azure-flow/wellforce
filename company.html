@@ -17,10 +17,11 @@
     <link href="assets/css/swiper.css" rel="stylesheet" />
     <link href="assets/css/font.css" rel="stylesheet" />
     <link href="assets/css/main.css" rel="stylesheet" />
-
+    <link href="assets/css/aos.css" rel="stylesheet" />
     <script src="assets/css/tailwind.css"></script>
     <script src="assets/js/swiper-bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/aos.js"></script>
   </head>
   <style>
     *,
@@ -174,6 +175,8 @@
     >
       <div
         class="w-full max-w-[750px] bg-white shadow-none px-[38px] md:px-[48px] lg:px-[60px] xl:px-0"
+        data-aos="fade-out"
+        data-aos-delay="200"
       >
         <div class="text-black">
           <div
@@ -244,6 +247,8 @@
       >
         <div
           class="w-full max-w-[1160px] flex flex-col-reverse md:flex-row items-center md:items-center gap-12 md:gap-6 lg:gap-8 xl:gap-10"
+          data-aos="fade-up"
+          data-aos-delay="200"
         >
           <!-- Text block -->
           <div
@@ -350,6 +355,8 @@
         </div>
         <div
           class="w-full max-w-[1160px] flex flex-col md:flex-row items-center md:items-center gap-12 md:gap-6 lg:gap-8 xl:gap-10"
+          data-aos="fade-up"
+          data-aos-delay="200"
         >
           <!-- Image block -->
           <div class="w-full flex justify-center md:justify-end">
@@ -462,6 +469,8 @@
         </div>
         <div
           class="w-full max-w-[1160px] flex flex-col-reverse md:flex-row items-center md:items-center gap-12 md:gap-6 lg:gap-8 xl:gap-10"
+          data-aos="fade-up"
+          data-aos-delay="200"
         >
           <!-- Text block -->
           <div
@@ -539,10 +548,11 @@
       <div
         class="md:max-w-[662px] lg:max-w-[842px] xl:max-w-[1024px] w-full flex flex-col items-center justify-center mx-auto"
       >
-        <div class="swiper swiper-company-brands01 w-full">
+        <div class="swiper swiper-company-brands01 w-full"
+        >
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <a href="https://crowdworks.jp">
+              <a href="https://www.sekisuihouse.co.jp/">
                 <div
                   class="w-[208px] md:w-[200px] lg:w-[260px] xl:w-full max-w-[300px] aspect-[2] bg-white rounded-[20px] rounded-[15px] border-[1px] border-gray-300 flex items-center justify-center overflow-hidden hover:border-gray-600 hover:shadow-gray-600 duration-200"
                 >
@@ -555,7 +565,7 @@
               </a>
             </div>
             <div class="swiper-slide">
-              <a href="https://crowdworks.jp">
+              <a href="https://www.sekisuihouse-f-kansai.co.jp/">
                 <div
                   class="w-[208px] md:w-[200px] lg:w-[260px] xl:w-full max-w-[300px] aspect-[2] bg-white rounded-[20px] rounded-[15px] border-[1px] border-gray-300 flex items-center justify-center overflow-hidden hover:border-gray-600 hover:shadow-gray-600 duration-200"
                 >
@@ -568,7 +578,7 @@
               </a>
             </div>
             <div class="swiper-slide">
-              <a href="https://crowdworks.jp">
+              <a href="https://www.sekisuihouse-k.jp">
                 <div
                   class="w-[208px] md:w-[200px] lg:w-[260px] xl:w-full max-w-[300px] aspect-[2] bg-white rounded-[20px] rounded-[15px] border-[1px] border-gray-300 flex items-center justify-center overflow-hidden hover:border-gray-600 hover:shadow-gray-600 duration-200"
                 >
@@ -585,7 +595,7 @@
         <div class="swiper swiper-company-brands02 w-full mt-[32px]">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <a href="https://crowdworks.jp">
+              <a href="https://homes.panasonic.com/">
                 <div
                   class="w-[208px] md:w-[200px] lg:w-[260px] xl:w-full max-w-[300px] aspect-[2] bg-white rounded-[20px] rounded-[15px] border-[1px] border-gray-300 flex items-center justify-center overflow-hidden hover:border-gray-600 hover:shadow-gray-600 duration-200"
                 >
@@ -598,7 +608,7 @@
               </a>
             </div>
             <div class="swiper-slide">
-              <a href="https://crowdworks.jp">
+              <a href="https://homes.panasonic.com/phr/">
                 <div
                   class="w-[208px] md:w-[200px] lg:w-[260px] xl:w-full max-w-[300px] aspect-[2] bg-white rounded-[20px] rounded-[15px] border-[1px] border-gray-300 flex items-center justify-center overflow-hidden hover:border-gray-600 hover:shadow-gray-600 duration-200"
                 >
@@ -611,7 +621,7 @@
               </a>
             </div>
             <div class="swiper-slide">
-              <a href="https://crowdworks.jp">
+              <a href="https://homes.panasonic.com/phre/">
                 <div
                   class="w-[208px] md:w-[200px] lg:w-[260px] xl:w-full max-w-[300px] aspect-[2] bg-white rounded-[20px] rounded-[15px] border-[1px] border-gray-300 flex items-center justify-center overflow-hidden hover:border-gray-600 hover:shadow-gray-600 duration-200"
                 >
@@ -644,14 +654,10 @@
                 style="filter: brightness(0) invert(1)"
               />
             </a>
-            <span class="text-white font-medium text-[30px] mb-5"
-              >Wellforce</span
-            >
+            <span class="text-white font-medium text-[30px] mb-5">Wellforce</span>
           </div>
           <div class="w-full md:w-1/4 flex flex-col items-start mb-8 md:mb-0">
-            <span class="font-bold mb-8 text-[16px] md:text-[18px]"
-              >メニュー</span
-            >
+            <span class="font-bold mb-8 text-[16px] md:text-[18px]">メニュー</span>
             <div class="grid grid-cols-2 gap-20 md:gap-6 lg:gap-8">
               <ul class="text-sm leading-8">
                 <li>
@@ -736,33 +742,45 @@
             >
             <ul class="text-sm leading-8">
               <li>
-                <span class="text-[12px] md:text-[14px] lg:text-[16px] font-300"
-                  >積水ハウス</span
+                <a
+                  href="https://www.sekisuihouse.co.jp/"
+                  class="text-[12px] md:text-[14px] lg:text-[16px] font-300 hover:underline"
+                  >積水ハウス</a
                 >
               </li>
               <li>
-                <a class="text-[12px] md:text-[14px] lg:text-[16px] font-300"
+                <a
+                  href="https://www.sekisuihouse-f-kansai.co.jp/"
+                  class="text-[12px] md:text-[14px] lg:text-[16px] font-300 hover:underline"
                   >積水ハウスシャーメゾン関西</a
                 >
               </li>
               <li>
-                <span class="text-[12px] md:text-[14px] lg:text-[16px] font-300"
-                  >積水ハウス建設グループ</span
+                <a
+                  href="https://www.sekisuihouse-k.jp"
+                  class="text-[12px] md:text-[14px] lg:text-[16px] font-300 hover:underline"
+                  >積水ハウス建設グループ</a
                 >
               </li>
               <li>
-                <span class="text-[12px] md:text-[14px] lg:text-[16px] font-300"
-                  >パナソニックホームズ</span
+                <a
+                  href="https://homes.panasonic.com/"
+                  class="text-[12px] md:text-[14px] lg:text-[16px] font-300 hover:underline"
+                  >パナソニックホームズ</a
                 >
               </li>
               <li>
-                <span class="text-[12px] md:text-[14px] lg:text-[16px] font-300"
-                  >パナソニックホームズ不動産</span
+                <a
+                  href="https://homes.panasonic.com/phre/"
+                  class="text-[12px] md:text-[14px] lg:text-[16px] font-300 hover:underline"
+                  >パナソニックホームズ不動産</a
                 >
               </li>
               <li>
-                <span class="text-[12px] md:text-[14px] lg:text-[16px] font-300"
-                  >パナソニックリフォーム</span
+                <a
+                  href="https://homes.panasonic.com/phr/"
+                  class="text-[12px] md:text-[14px] lg:text-[16px] font-300 hover:underline"
+                  >パナソニックリフォーム</a
                 >
               </li>
             </ul>
