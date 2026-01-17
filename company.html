@@ -161,7 +161,12 @@
       <div
         class="text-[10px] md:text-[11px] lg:text-[13px] xl:text-[14px] text-black py-4 md:py-5 lg:py-7 xl:py-8"
       >
-        <a href="index.html" class="hover:text-[#28A8E0] hover:underline underline-offset-2 cursor-pointer select-none transition-colors duration-200">株式会社ウエルフォース</a> / 会社概要
+        <a
+          href="index.html"
+          class="hover:text-[#28A8E0] hover:underline underline-offset-2 cursor-pointer select-none transition-colors duration-200"
+          >株式会社ウエルフォース</a
+        >
+        / 会社概要
       </div>
     </section>
     <section
@@ -280,13 +285,57 @@
           <!-- Image block -->
           <div class="w-full flex justify-center md:justify-end">
             <div
-              class="bg-white rounded-[20px] shadow-sm overflow-hidden w-[300px] md:w-[350px] lg:w-[500px] xl:w-[620px] w-full"
+              class="group bg-white rounded-[20px] shadow-sm overflow-hidden w-[300px] md:w-[350px] lg:w-[500px] xl:w-[620px] w-full shadow-xl relative"
             >
-              <img
-                src="assets/images/bis01.webp"
-                alt="賃貸住宅の外観と入居者イメージ"
-                class="w-full h-auto"
-              />
+              <div class="relative w-full">
+                <img
+                  id="image-01"
+                  src="assets/images/bis01.webp"
+                  alt="賃貸住宅の外観と入居者イメージ"
+                  class="w-full h-auto transition-opacity duration-500"
+                />
+                <!-- Mobile play button on image -->
+                <button
+                  id="mobile-play-btn-01"
+                  class="md:hidden absolute inset-0 flex items-center justify-center bg-black/30 rounded-[20px] transition-opacity duration-300"
+                  aria-label="Play video"
+                >
+                  <svg
+                    class="w-16 h-16 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+              </div>
+              <div
+                id="video-container-01"
+                class="absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-500"
+              >
+                <video
+                  id="fast-video-01"
+                  src="assets/videos/猫と暮らす未来型賃貸住宅.mp4"
+                  alt="賃貸住宅の外観と入居者イメージ"
+                  class="w-full aspect-[1.17] object-cover"
+                  muted
+                  loop
+                ></video>
+                <!-- Play button on video center -->
+                <button
+                  id="video-play-btn-01"
+                  class="absolute inset-0 flex items-center justify-center bg-black/30 transition-opacity duration-300"
+                  aria-label="Play video"
+                >
+                  <svg
+                    class="w-16 h-16 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -305,13 +354,57 @@
           <!-- Image block -->
           <div class="w-full flex justify-center md:justify-end">
             <div
-              class="bg-white rounded-[20px] shadow-sm overflow-hidden w-[300px] md:w-[350px] lg:w-[500px] xl:w-[620px] w-full"
+              class="group bg-white rounded-[20px] shadow-sm overflow-hidden w-[300px] md:w-[350px] lg:w-[500px] xl:w-[620px] w-full shadow-xl relative"
             >
-              <img
-                src="assets/images/bis02.webp"
-                alt="賃貸住宅の外観と入居者イメージ"
-                class="w-full h-auto"
-              />
+              <div class="relative w-full">
+                <img
+                  id="image-02"
+                  src="assets/images/bis02.webp"
+                  alt="賃貸住宅の外観と入居者イメージ"
+                  class="w-full h-auto transition-opacity duration-500"
+                />
+                <!-- Mobile play button on image -->
+                <button
+                  id="mobile-play-btn-02"
+                  class="md:hidden absolute inset-0 flex items-center justify-center bg-black/30 rounded-[20px] transition-opacity duration-300"
+                  aria-label="Play video"
+                >
+                  <svg
+                    class="w-16 h-16 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+              </div>
+              <div
+                id="video-container-02"
+                class="absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-500"
+              >
+                <video
+                  id="fast-video-02"
+                  src="assets/videos/生成AIコミュニティ.mp4"
+                  alt="賃貸住宅の外観と入居者イメージ"
+                  class="w-full aspect-[1.17] object-cover"
+                  muted
+                  loop
+                ></video>
+                <!-- Play button on video center -->
+                <button
+                  id="video-play-btn-02"
+                  class="absolute inset-0 flex items-center justify-center bg-black/30 transition-opacity duration-300"
+                  aria-label="Play video"
+                >
+                  <svg
+                    class="w-16 h-16 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
           <!-- Text block -->
@@ -421,9 +514,7 @@
             </div>
           </div>
         </div>
-        <div
-          class="w-full max-w-[1160px] mx-auto justify-center items-center"
-        >
+        <div class="w-full max-w-[1160px] mx-auto justify-center items-center">
           <p
             class="text-[14px] lg:text-[15px] xl:text-[16px] font-medium text-start md:text-center leading-6"
           >
@@ -453,41 +544,41 @@
             <div class="swiper-slide">
               <a href="https://crowdworks.jp">
                 <div
-                class="w-[208px] md:w-[200px] lg:w-[260px] xl:w-full max-w-[300px] aspect-[2] bg-white rounded-[20px] rounded-[15px] border-[1px] border-gray-300 flex items-center justify-center overflow-hidden hover:border-gray-600 hover:shadow-gray-600 duration-200"
+                  class="w-[208px] md:w-[200px] lg:w-[260px] xl:w-full max-w-[300px] aspect-[2] bg-white rounded-[20px] rounded-[15px] border-[1px] border-gray-300 flex items-center justify-center overflow-hidden hover:border-gray-600 hover:shadow-gray-600 duration-200"
                 >
-                <img
-                src="assets/images/brand01.webp"
-                alt="marquee01"
-                class="w-full object-cover"
-                />
-              </div>
-            </a>
+                  <img
+                    src="assets/images/brand01.webp"
+                    alt="marquee01"
+                    class="w-full object-cover"
+                  />
+                </div>
+              </a>
             </div>
             <div class="swiper-slide">
               <a href="https://crowdworks.jp">
                 <div
-                class="w-[208px] md:w-[200px] lg:w-[260px] xl:w-full max-w-[300px] aspect-[2] bg-white rounded-[20px] rounded-[15px] border-[1px] border-gray-300 flex items-center justify-center overflow-hidden hover:border-gray-600 hover:shadow-gray-600 duration-200"
+                  class="w-[208px] md:w-[200px] lg:w-[260px] xl:w-full max-w-[300px] aspect-[2] bg-white rounded-[20px] rounded-[15px] border-[1px] border-gray-300 flex items-center justify-center overflow-hidden hover:border-gray-600 hover:shadow-gray-600 duration-200"
                 >
-                <img
-                src="assets/images/brand02.webp"
-                alt="marquee02"
-                class="w-full object-cover"
-                />
-              </div>
-            </a>
+                  <img
+                    src="assets/images/brand02.webp"
+                    alt="marquee02"
+                    class="w-full object-cover"
+                  />
+                </div>
+              </a>
             </div>
             <div class="swiper-slide">
               <a href="https://crowdworks.jp">
                 <div
-                class="w-[208px] md:w-[200px] lg:w-[260px] xl:w-full max-w-[300px] aspect-[2] bg-white rounded-[20px] rounded-[15px] border-[1px] border-gray-300 flex items-center justify-center overflow-hidden hover:border-gray-600 hover:shadow-gray-600 duration-200"
+                  class="w-[208px] md:w-[200px] lg:w-[260px] xl:w-full max-w-[300px] aspect-[2] bg-white rounded-[20px] rounded-[15px] border-[1px] border-gray-300 flex items-center justify-center overflow-hidden hover:border-gray-600 hover:shadow-gray-600 duration-200"
                 >
-                <img
-                src="assets/images/brand03.webp"
-                alt="marquee03"
-                class="w-full object-cover"
-                />
-              </div>
-            </a>
+                  <img
+                    src="assets/images/brand03.webp"
+                    alt="marquee03"
+                    class="w-full object-cover"
+                  />
+                </div>
+              </a>
             </div>
           </div>
         </div>
@@ -496,41 +587,41 @@
             <div class="swiper-slide">
               <a href="https://crowdworks.jp">
                 <div
-                class="w-[208px] md:w-[200px] lg:w-[260px] xl:w-full max-w-[300px] aspect-[2] bg-white rounded-[20px] rounded-[15px] border-[1px] border-gray-300 flex items-center justify-center overflow-hidden hover:border-gray-600 hover:shadow-gray-600 duration-200"
+                  class="w-[208px] md:w-[200px] lg:w-[260px] xl:w-full max-w-[300px] aspect-[2] bg-white rounded-[20px] rounded-[15px] border-[1px] border-gray-300 flex items-center justify-center overflow-hidden hover:border-gray-600 hover:shadow-gray-600 duration-200"
                 >
-                <img
-                src="assets/images/brand04.webp"
-                alt="marquee04"
-                class="w-full object-cover"
-                />
-              </div>
-            </a>
+                  <img
+                    src="assets/images/brand04.webp"
+                    alt="marquee04"
+                    class="w-full object-cover"
+                  />
+                </div>
+              </a>
             </div>
             <div class="swiper-slide">
               <a href="https://crowdworks.jp">
                 <div
-                class="w-[208px] md:w-[200px] lg:w-[260px] xl:w-full max-w-[300px] aspect-[2] bg-white rounded-[20px] rounded-[15px] border-[1px] border-gray-300 flex items-center justify-center overflow-hidden hover:border-gray-600 hover:shadow-gray-600 duration-200"
+                  class="w-[208px] md:w-[200px] lg:w-[260px] xl:w-full max-w-[300px] aspect-[2] bg-white rounded-[20px] rounded-[15px] border-[1px] border-gray-300 flex items-center justify-center overflow-hidden hover:border-gray-600 hover:shadow-gray-600 duration-200"
                 >
-                <img
-                src="assets/images/brand05.webp"
-                alt="marquee05"
-                class="w-full object-cover"
-                />
-              </div>
-            </a>
+                  <img
+                    src="assets/images/brand05.webp"
+                    alt="marquee05"
+                    class="w-full object-cover"
+                  />
+                </div>
+              </a>
             </div>
             <div class="swiper-slide">
               <a href="https://crowdworks.jp">
                 <div
-                class="w-[208px] md:w-[200px] lg:w-[260px] xl:w-full max-w-[300px] aspect-[2] bg-white rounded-[20px] rounded-[15px] border-[1px] border-gray-300 flex items-center justify-center overflow-hidden hover:border-gray-600 hover:shadow-gray-600 duration-200"
+                  class="w-[208px] md:w-[200px] lg:w-[260px] xl:w-full max-w-[300px] aspect-[2] bg-white rounded-[20px] rounded-[15px] border-[1px] border-gray-300 flex items-center justify-center overflow-hidden hover:border-gray-600 hover:shadow-gray-600 duration-200"
                 >
-                <img
-                src="assets/images/brand06.webp"
-                alt="marquee06"
-                class="w-full object-cover"
-                />
-              </div>
-            </a>
+                  <img
+                    src="assets/images/brand06.webp"
+                    alt="marquee06"
+                    class="w-full object-cover"
+                  />
+                </div>
+              </a>
             </div>
           </div>
         </div>
@@ -538,17 +629,21 @@
     </section>
 
     <footer class="bg-[#42a7e8] text-white">
-      <div class="mx-auto px-16 md:px-0 md:max-w-[700px] lg:max-w-[1000px] xl:max-w-[1100px]" >
+      <div
+        class="mx-auto px-16 md:px-0 md:max-w-[700px] lg:max-w-[1000px] xl:max-w-[1100px]"
+      >
         <div class="flex flex-wrap md:flex-nowrap gap-x-12 pt-16 pb-12">
           <div
             class="w-full md:w-1/6 flex flex-col items-center md:items-start mb-8 md:mb-0"
           >
-            <img
-              src="assets/images/logo.png"
-              alt="Wellforce logo"
-              class="mb-3 w-[100px]"
-              style="filter: brightness(0) invert(1)"
-            />
+            <a href="index.html">
+              <img
+                src="assets/images/logo.png"
+                alt="Wellforce logo"
+                class="mb-3 w-[100px]"
+                style="filter: brightness(0) invert(1)"
+              />
+            </a>
             <span class="text-white font-medium text-[30px] mb-5"
               >Wellforce</span
             >
@@ -557,7 +652,7 @@
             <span class="font-bold mb-8 text-[16px] md:text-[18px]"
               >メニュー</span
             >
-            <div class="grid grid-cols-2 gap-20 md:gap-8">
+            <div class="grid grid-cols-2 gap-20 md:gap-6 lg:gap-8">
               <ul class="text-sm leading-8">
                 <li>
                   <a
@@ -591,7 +686,7 @@
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="news.html"
                     class="hover:underline text-[12px] md:text-[14px] lg:text-[16px] font-300"
                     >ニュース</a
                   >
@@ -619,24 +714,18 @@
             >
             <ul class="text-sm leading-8">
               <li>
-                <a
-                  href="#"
-                  class="hover:underline text-[12px] md:text-[14px] lg:text-[16px] font-300"
-                  >名称 ：株式会社ウエルフォース</a
+                <span class="text-[12px] md:text-[14px] lg:text-[16px] font-300"
+                  >名称 ：株式会社ウエルフォース</span
                 >
               </li>
               <li>
-                <a
-                  href="#"
-                  class="hover:underline text-[12px] md:text-[14px] lg:text-[16px] font-300"
-                  >住所 ：東大阪市中小阪2丁目</a
+                <span class="text-[12px] md:text-[14px] lg:text-[16px] font-300"
+                  >住所 ：東大阪市中小阪2丁目</span
                 >
               </li>
               <li>
-                <a
-                  href="#"
-                  class="hover:underline text-[12px] md:text-[14px] lg:text-[16px] font-300"
-                  >メール：info@wellforce.jp</a
+                <span class="text-[12px] md:text-[14px] lg:text-[16px] font-300"
+                  >メール：info@wellforce.jp</span
                 >
               </li>
             </ul>
@@ -647,45 +736,33 @@
             >
             <ul class="text-sm leading-8">
               <li>
-                <a
-                  href="#"
-                  class="hover:underline text-[12px] md:text-[14px] lg:text-[16px] font-300"
-                  >積水ハウス</a
+                <span class="text-[12px] md:text-[14px] lg:text-[16px] font-300"
+                  >積水ハウス</span
                 >
               </li>
               <li>
-                <a
-                  href="#"
-                  class="hover:underline text-[12px] md:text-[14px] lg:text-[16px] font-300"
+                <a class="text-[12px] md:text-[14px] lg:text-[16px] font-300"
                   >積水ハウスシャーメゾン関西</a
                 >
               </li>
               <li>
-                <a
-                  href="#"
-                  class="hover:underline text-[12px] md:text-[14px] lg:text-[16px] font-300"
-                  >積水ハウス建設グループ</a
+                <span class="text-[12px] md:text-[14px] lg:text-[16px] font-300"
+                  >積水ハウス建設グループ</span
                 >
               </li>
               <li>
-                <a
-                  href="#"
-                  class="hover:underline text-[12px] md:text-[14px] lg:text-[16px] font-300"
-                  >パナソニックホームズ</a
+                <span class="text-[12px] md:text-[14px] lg:text-[16px] font-300"
+                  >パナソニックホームズ</span
                 >
               </li>
               <li>
-                <a
-                  href="#"
-                  class="hover:underline text-[12px] md:text-[14px] lg:text-[16px] font-300"
-                  >パナソニックホームズ不動産</a
+                <span class="text-[12px] md:text-[14px] lg:text-[16px] font-300"
+                  >パナソニックホームズ不動産</span
                 >
               </li>
               <li>
-                <a
-                  href="#"
-                  class="hover:underline text-[12px] md:text-[14px] lg:text-[16px] font-300"
-                  >パナソニックリフォーム</a
+                <span class="text-[12px] md:text-[14px] lg:text-[16px] font-300"
+                  >パナソニックリフォーム</span
                 >
               </li>
             </ul>
