@@ -35,107 +35,76 @@ document.addEventListener("DOMContentLoaded", function () {
     toggleScrollToTopButton();
   }
 
-  // Header background change on scroll for index.html (smartphone only)
-  const currentPage = window.location.pathname.split("/").pop() || "index.html";
-  if (currentPage === "index.html") {
-    const header = document.querySelector("header");
-
-    if (header) {
-      function updateIndexHeaderBackground() {
-        const scrollPosition = window.pageYOffset;
-        const isMobile = window.innerWidth < 768; // md breakpoint
-
+// Header background change on scroll (exclude index.html and news-sub.html)
+  const heroSection = document.getElementById("hero-section");
+  const header = document.querySelector("header");
+  if (header) {
+    function updateHeaderBackground() {
+      // Check if we're on front page or single news page
+      const isFrontPage = header.getAttribute("data-is-front-page") === "true";
+      const isSingleNews = header.getAttribute("data-is-single-news") === "true";
+      
+      // If on front page or single news page, always apply background color
+      if (isFrontPage || isSingleNews) {
+        header.classList.remove("bg-white", "bg-[#e2f5ff]", "hover:bg-[#e2f5ff]");
+        header.classList.add("bg-[#e2f5ffb3]", "hover:bg-[#e2f5ff]");
+        return; // Exit early, don't apply scroll-based logic
+      }
+      
+      let heroHeight;
+      if (heroSection) {
+        heroHeight = heroSection.offsetHeight;
+      } else {
+        heroHeight = 500; // default height
+      }
+      const scrollPosition = window.pageYOffset;
+      const isMobile = window.innerWidth < 768; // md breakpoint
+      if (scrollPosition > heroHeight) {
+        // Remove all background classes first
+        header.classList.remove("bg-white", "bg-[#e2f5ffb3]", "bg-[#e2f5ff]");
         if (isMobile) {
-          // Only apply on smartphone
-          if (scrollPosition > 500) {
-            // Change to bg-[#e2f5ff] when scrolled past 300px
-            // Remove bg-white but keep md:bg-[#e2f5ffb3] for desktop
-            if (header.classList.contains("bg-white")) {
-              header.classList.remove("bg-white");
-            }
-            if (!header.classList.contains("bg-[#e2f5ff]")) {
-              header.classList.add("bg-[#e2f5ff]");
-            }
-          } else {
-            // Change back to bg-white when at top (mobile only)
-            header.classList.remove("bg-[#e2f5ff]");
-            if (!header.classList.contains("bg-white")) {
-              header.classList.add("bg-white");
-            }
-          }
-        }
-        // On desktop, the existing md:bg-[#e2f5ffb3] class handles it automatically
-      }
-
-      // Event listeners
-      window.addEventListener("scroll", updateIndexHeaderBackground);
-      window.addEventListener("resize", updateIndexHeaderBackground); // Update on resize
-
-      // Initial check
-      updateIndexHeaderBackground();
-    }
-  }
-
-  // Header background change on scroll (exclude index.html and news-sub.html)
-  if (currentPage !== "index.html" && currentPage !== "news-sub.html") {
-    const heroSection = document.getElementById("hero-section");
-    const header = document.querySelector("header");
-
-    if (heroSection && header) {
-      function updateHeaderBackground() {
-        const heroHeight = heroSection.offsetHeight;
-        const scrollPosition = window.pageYOffset;
-        const isMobile = window.innerWidth < 768; // md breakpoint
-
-        if (scrollPosition > heroHeight) {
-          // Remove all background classes first
-          header.classList.remove("bg-white", "bg-[#e2f5ffb3]", "bg-[#e2f5ff]");
-
-          if (isMobile) {
-            // On smartphone: use bg-[#e2f5ff]
-            header.classList.add("bg-[#e2f5ff]");
-          } else {
-            // On desktop: use bg-[#e2f5ffb3] with hover effect
-            header.classList.add("bg-[#e2f5ffb3]");
-            header.classList.add("hover:bg-[#e2f5ff]");
-          }
+          // On smartphone: use bg-[#e2f5ff]
+          header.classList.add("bg-[#e2f5ff]");
         } else {
-          // Change back to bg-white when at top
-          header.classList.remove(
-            "bg-[#e2f5ffb3]",
-            "bg-[#e2f5ff]",
-            "hover:bg-[#e2f5ff]"
-          );
-          header.classList.add("bg-white");
+          // On desktop: use bg-[#e2f5ffb3] with hover effect
+          header.classList.add("bg-[#e2f5ffb3]");
+          header.classList.add("hover:bg-[#e2f5ff]");
         }
+      } else {
+        // Change back to bg-white when at top
+        header.classList.remove(
+          "bg-[#e2f5ffb3]",
+          "bg-[#e2f5ff]",
+          "hover:bg-[#e2f5ff]"
+        );
+        header.classList.add("bg-white");
       }
-
-      // Event listeners
-      window.addEventListener("scroll", updateHeaderBackground);
-      window.addEventListener("resize", updateHeaderBackground); // Update on resize
-
-      // Initial check
-      updateHeaderBackground();
     }
-  }
+    // Event listeners
+    window.addEventListener("scroll", updateHeaderBackground);
+    window.addEventListener("resize", updateHeaderBackground); // Update on resize
+    // Initial check
+    updateHeaderBackground();
+}
 
-  const fvSwiperEl = document.querySelector(".swiper-fv");
-  if (fvSwiperEl) {
-    new Swiper(".swiper-fv", {
-      slidesPerView: 1,
-      speed: 500,
-      effect: "fade",
-      loop: true,
-      autoplay: {
-          delay: 500,
-          disableOnInteraction: false
-      },
-      navigation: {
-        nextEl: ".initiative-swiper-next",
-        prevEl: ".initiative-swiper-prev",
-      },
-    });
-  }
+
+const fvSwiperEl = document.querySelector(".swiper-fv");
+if (fvSwiperEl) {
+  new Swiper(".swiper-fv", {
+    slidesPerView: 1,
+    speed: 2000,
+    effect: "fade",
+    loop: true,
+    autoplay: {
+        delay: 2000,
+        disableOnInteraction: false
+    },
+    navigation: {
+      nextEl: ".initiative-swiper-next",
+      prevEl: ".initiative-swiper-prev",
+    },
+  });
+}
 
   const initiativeSwiperEl = document.querySelector(".swiper-initiative");
   if (initiativeSwiperEl) {
