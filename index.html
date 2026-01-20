@@ -75,14 +75,18 @@
           class="hidden md:flex flex-col gap-[2px] md:gap-1 lg:gap-2 xl:gap-3"
         >
           <div class="grid grid-cols-4 gap-6 lg:gap-8 xl:gap-10 justify-end">
-            <span class="col-span-2 flex justify-end">
+              <a
+                href="index.html"
+                class="text-black text-[13px] lg:text-[14px] xl:text-[16px] text-right font-medium hover:text-[#28A8E0] transition-colors duration-200"
+              >
+              トップページ
+              </a>
               <a
                 href="company.html"
                 class="text-black text-[13px] lg:text-[14px] xl:text-[16px] text-right font-medium hover:text-[#28A8E0] transition-colors duration-200"
               >
                 会社概要
               </a>
-            </span>
             <a
               href="concept.html"
               class="text-black text-[13px] lg:text-[14px] xl:text-[16px] text-right font-medium hover:text-[#28A8E0] transition-colors duration-200"
@@ -145,11 +149,38 @@
         data-aos="fade-in"
         data-aos-delay="200"
       >
-        <img
-          src="assets/images/fv_top.webp"
-          alt="FV"
-          class="absolute top-0 left-0 right-0 bottom-0 w-full h-full object-cover"
-        />
+      <div class="w-full h-full swiper swiper-fv">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img
+              src="assets/images/fv_top.webp"
+              alt="FV"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          <div class="swiper-slide">
+            <img
+              src="assets/images/map.webp"
+              alt="FV"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          <div class="swiper-slide">
+            <img
+              src="assets/images/fv_top.webp"
+              alt="FV"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          <div class="swiper-slide">
+            <img
+              src="assets/images/fv-concept.webp"
+              alt="FV"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
       </div>
       <div
         class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 flex items-center justify-center lg:justify-start w-[110%] md:w-[90%] lg:w-[95%] xl:w-full max-w-[1400px] md:mt-32"

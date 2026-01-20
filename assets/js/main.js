@@ -119,6 +119,24 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  const fvSwiperEl = document.querySelector(".swiper-fv");
+  if (fvSwiperEl) {
+    new Swiper(".swiper-fv", {
+      slidesPerView: 1,
+      speed: 500,
+      effect: "fade",
+      loop: true,
+      autoplay: {
+          delay: 500,
+          disableOnInteraction: false
+      },
+      navigation: {
+        nextEl: ".initiative-swiper-next",
+        prevEl: ".initiative-swiper-prev",
+      },
+    });
+  }
+
   const initiativeSwiperEl = document.querySelector(".swiper-initiative");
   if (initiativeSwiperEl) {
     new Swiper(".swiper-initiative", {
