@@ -418,4 +418,62 @@ if (fvSwiperEl) {
     "video-play-btn-02",
     "mobile-play-btn-02"
   );
+
+  // Information Modal
+  const infoModal = document.getElementById("infoModal");
+  const closeModalBtn = document.getElementById("closeModalBtn");
+  const openModalBtn = document.getElementById("openModalBtn");
+
+  function openModal() {
+    if (infoModal) {
+      infoModal.classList.remove("opacity-0", "pointer-events-none");
+      infoModal.classList.add("opacity-100", "pointer-events-auto");
+      const modalContent = infoModal.querySelector(".bg-white");
+      if (modalContent) {
+        modalContent.classList.remove("scale-95");
+        modalContent.classList.add("scale-100");
+      }
+      document.body.style.overflow = "hidden";
+    }
+  }
+
+  function closeModal() {
+    if (infoModal) {
+      infoModal.classList.add("opacity-0", "pointer-events-none");
+      infoModal.classList.remove("opacity-100", "pointer-events-auto");
+      const modalContent = infoModal.querySelector(".bg-white");
+      if (modalContent) {
+        modalContent.classList.add("scale-95");
+        modalContent.classList.remove("scale-100");
+      }
+      document.body.style.overflow = "";
+    }
+  }
+
+  if (openModalBtn) {
+    openModalBtn.addEventListener("click", openModal);
+  }
+
+  if (closeModalBtn) {
+    closeModalBtn.addEventListener("click", closeModal);
+  }
+
+  // Close modal when clicking outside
+  if (infoModal) {
+    infoModal.addEventListener("click", (e) => {
+      if (e.target === infoModal) {
+        closeModal();
+      }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !infoModal.classList.contains("opacity-0")) {
+        closeModal();
+      }
+    });
+  }
+
+  // Expose openModal function globally so it can be called from map clicks
+  window.openInfoModal = openModal;
 });
