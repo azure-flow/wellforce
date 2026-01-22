@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 
   // AOS
-  if (typeof(AOS) !== "undefined") {
+  if (typeof (AOS) !== "undefined") {
     AOS.init();
   }
 
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
     toggleScrollToTopButton();
   }
 
-// Header background change on scroll (exclude index.html and news-sub.html)
+  // Header background change on scroll (exclude index.html and news-sub.html)
   const heroSection = document.getElementById("hero-section");
   const header = document.querySelector("header");
   if (header) {
@@ -43,14 +43,14 @@ document.addEventListener("DOMContentLoaded", function () {
       // Check if we're on front page or single news page
       const isFrontPage = header.getAttribute("data-is-front-page") === "true";
       const isSingleNews = header.getAttribute("data-is-single-news") === "true";
-      
+
       // If on front page or single news page, always apply background color
       if (isFrontPage || isSingleNews) {
         header.classList.remove("bg-white", "bg-[#e2f5ff]", "hover:bg-[#e2f5ff]");
         header.classList.add("bg-[#e2f5ffb3]", "hover:bg-[#e2f5ff]");
         return; // Exit early, don't apply scroll-based logic
       }
-      
+
       let heroHeight;
       if (heroSection) {
         heroHeight = heroSection.offsetHeight;
@@ -85,26 +85,26 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("resize", updateHeaderBackground); // Update on resize
     // Initial check
     updateHeaderBackground();
-}
+  }
 
 
-const fvSwiperEl = document.querySelector(".swiper-fv");
-if (fvSwiperEl) {
-  new Swiper(".swiper-fv", {
-    slidesPerView: 1,
-    speed: 2000,
-    effect: "fade",
-    loop: true,
-    autoplay: {
+  const fvSwiperEl = document.querySelector(".swiper-fv");
+  if (fvSwiperEl) {
+    new Swiper(".swiper-fv", {
+      slidesPerView: 1,
+      speed: 2000,
+      effect: "fade",
+      loop: true,
+      autoplay: {
         delay: 2000,
         disableOnInteraction: false
-    },
-    navigation: {
-      nextEl: ".initiative-swiper-next",
-      prevEl: ".initiative-swiper-prev",
-    },
-  });
-}
+      },
+      navigation: {
+        nextEl: ".initiative-swiper-next",
+        prevEl: ".initiative-swiper-prev",
+      },
+    });
+  }
 
   const initiativeSwiperEl = document.querySelector(".swiper-initiative");
   if (initiativeSwiperEl) {
@@ -124,8 +124,8 @@ if (fvSwiperEl) {
       loop: true,
       centeredSlides: false,
       autoplay: {
-          delay: 3400,
-          disableOnInteraction: false
+        delay: 3400,
+        disableOnInteraction: false
       },
       navigation: {
         nextEl: ".initiative-swiper-next",
@@ -476,4 +476,80 @@ if (fvSwiperEl) {
 
   // Expose openModal function globally so it can be called from map clicks
   window.openInfoModal = openModal;
+
+  // Calendar Modal
+  const calendarModal = document.getElementById("calendarInfoModal");
+  const closeCalendarModalBtn = document.getElementById("closeCalendarModalBtn");
+  const calendarItems = document.querySelectorAll(".calendar-item");
+
+  function openCalendarModal(eventName, eventDate, eventImage, eventDescription) {
+    if (calendarModal) {
+      // Update modal content
+      const modalEventName = document.getElementById("modalEventName");
+      const modalEventDate = document.getElementById("modalEventDate");
+      const modalEventImage = document.getElementById("modalEventImage");
+      const modalEventDescription = document.getElementById("modalEventDescription");
+
+      if (modalEventName) modalEventName.textContent = eventName || "イベント名";
+      if (modalEventDate) modalEventDate.textContent = eventDate || "2026.3~2026.4";
+      if (modalEventImage && eventImage) modalEventImage.src = eventImage;
+      if (modalEventDescription && eventDescription) modalEventDescription.textContent = eventDescription;
+
+      // Show modal
+      calendarModal.classList.remove("opacity-0", "pointer-events-none");
+      calendarModal.classList.add("opacity-100", "pointer-events-auto");
+      const modalContent = calendarModal.querySelector(".bg-white");
+      if (modalContent) {
+        modalContent.classList.remove("scale-95");
+        modalContent.classList.add("scale-100");
+      }
+      document.body.style.overflow = "hidden";
+    }
+  }
+
+  function closeCalendarModal() {
+    if (calendarModal) {
+      calendarModal.classList.add("opacity-0", "pointer-events-none");
+      calendarModal.classList.remove("opacity-100", "pointer-events-auto");
+      const modalContent = calendarModal.querySelector(".bg-white");
+      if (modalContent) {
+        modalContent.classList.add("scale-95");
+        modalContent.classList.remove("scale-100");
+      }
+      document.body.style.overflow = "";
+    }
+  }
+
+  // Add click listeners to all calendar items
+  calendarItems.forEach((item) => {
+    item.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const eventName = item.getAttribute("data-event-name") || item.textContent.trim();
+      const eventDate = item.getAttribute("data-event-date") || "2026.3~2026.4";
+      const eventImage = item.getAttribute("data-event-image") || "assets/images/bis01.webp";
+      const eventDescription = item.getAttribute("data-event-description") || "";
+
+      openCalendarModal(eventName, eventDate, eventImage, eventDescription);
+    });
+  });
+
+  if (closeCalendarModalBtn) {
+    closeCalendarModalBtn.addEventListener("click", closeCalendarModal);
+  }
+
+  // Close modal when clicking outside
+  if (calendarModal) {
+    calendarModal.addEventListener("click", (e) => {
+      if (e.target === calendarModal) {
+        closeCalendarModal();
+      }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !calendarModal.classList.contains("opacity-0")) {
+        closeCalendarModal();
+      }
+    });
+  }
 });
